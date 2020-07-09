@@ -21,14 +21,28 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#define linejump 5
 
 #define USAGE "m011 <filename>\n"
-
 /* Return the number of words in ascii text file 'filename'.*/
 
 int wordcount (char *filename)
 {
-  return 0;
+  int wrd=0, n;
+  FILE *fp;
+  fp=fopen(filename, "r");
+  while(n!=EOF)
+  {
+    n=fgetc(fp);
+    if((n==32)||(n==10))
+    {
+      wrd++;
+      continue;
+    }
+  }
+
+  wrd=wrd-linejump;
+  return wrd;
 }
 
 /* Do not edit function main. */

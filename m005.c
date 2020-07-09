@@ -27,7 +27,21 @@
 
 int determinant (int m[3][3])
 {
-  return 0;
+  int a, b, c;
+  int d, e, f;
+  int det;
+
+  a=m[0][0]*m[1][1]*m[2][2];
+  b=m[1][0]*m[2][1]*m[0][2];
+  c=m[0][1]*m[1][2]*m[2][0];
+
+  d=m[2][0]*m[1][1]*m[0][2];
+  e=m[1][0]*m[0][1]*m[2][2];
+  f=m[2][1]*m[1][2]*m[1][1];
+
+  det=(a+b+c)-(d+e+f);
+
+  return det;
 }
 
 
