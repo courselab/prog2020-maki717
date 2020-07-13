@@ -43,11 +43,8 @@ int greatest (int a, int b, int c)
       }
       else
       {
-        if((a==b)&&(b==c))
-        {
-          n=0;
-          printf("All numbers are equal\n");
-        }
+        n=a;
+        printf("All numbers are equal.\n");
       }
     }
   }
