@@ -41,11 +41,6 @@ int greatest (int a, int b, int c)
       {
         n=c;
       }
-      else
-      {
-        n=a;
-        printf("All numbers are equal.\n");
-      }
     }
   }
   return n;
