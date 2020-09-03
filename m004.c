@@ -29,8 +29,18 @@
 
 int decimal (char *b)
 {
-  
-  return 0;
+  int n, i, p, sum;
+  n=strlen(b);
+  sum=0;
+  p=1;
+
+  for(i=n-1; i>=0; i--)
+  {
+    sum=sum+(b[i]-48)*p;
+    p=2*p;
+  }
+
+  return sum;
 }
 
 #define USAGE "m004 <string>\n"

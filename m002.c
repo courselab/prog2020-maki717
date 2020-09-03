@@ -27,6 +27,50 @@
 
 void sort (int *a, int *b, int *c)
 {
+  int t, u, v;
+  if((*a<*b)&&(*a<*c)&&(*b<*c))  /* a<b<c */
+  {
+    *a=*a; *b=*b; *c=*c;
+  }
+  else
+  {
+    if((*a<*c)&&(*a<*b)&&(*c<*b))  /* a<c<b */
+    {
+      *a=*a; t=*b; *b=*c; *c=t;
+    }
+    else
+    {
+      if((*b<*a)&&(*b<*c)&&(*a<*c))  /* b<a<c */
+      {
+        t=*a; *a=*b; *b=t; *c=*c;
+      }
+      else
+      {
+        if((*b<*c)&&(*b<*a)&&(*c<*a))  /* b<c<a */
+        {
+          t=*a; u=*b; v=*c; *a=u; *b=v; *c=t;
+        }
+        else
+        {
+          if((*c<*a)&&(*c<*b)&&(*a<*b))  /* c<a<b */
+          {
+            t=*a; u=*b; v=*c; *a=v; *b=t; *c=u;
+          }
+          else
+          {
+            if((*c<*b)&&(*c<*a)&&(*b<*a))  /* c<b<a */
+            {
+              t=*a; v=*c; *a=v; *b=*b; *c=t;
+            }
+            else
+            {
+              printf("All numbers are equal\n");
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Do not edit this function. */
